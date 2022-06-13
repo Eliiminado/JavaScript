@@ -1,18 +1,33 @@
-/* alert("Eres lo que mas amo en este mundo")*/
-const edad = prompt("Introduce tu edad");
-if (edad > 0 && edad < 100 && !isNaN(edad)) {
 
-    if (edad > 18) {
-        alert(`Eres mayor de edad`)
-    }
-    else {
-        alert(`Eres un bebesote`)
-    }
-}
+const numero = prompt("Introduce un numéro del 1 al 7");
+const numparseado = parseInt(numero);
 
-else {
-    alert(`No puedes tener menos de 0 años o mayor de 100. Tampoco puede tener letras por edad.`)
-}
+/*switch (numparseado) {
+    case 1:
+        alert(`Tu dia de la semana es Lunes`);
+        break;
+    case 2:
+        alert(`Tu dia de la semana es Martes`);
+        break;
+    case 3:
+        alert(`Tu dia de la semana es Miercoles`);
+        break;
+    case 4:
+        alert(`Tu dia de la semana es Jueves`);
+        break;
+    case 5:
+        alert(`Tu dia de la semana es Viernes`);
+        break;
+    case 6:
+        alert(`Tu dia de la semana es Sabado`);
+        break;
+    case 7:
+        alert(`Tu dia de la semana es Domingo`);
+        break;
+    default:
+        alert(`El número introducido no es valido`);
+        break;
+}*/
 
-// alert("Tu edad es:" + edad);
-/*alert(`Tienes ${edad} años`);*/
+const DiasSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+alert(DiasSemana[numparseado - 1]);
