@@ -1,14 +1,24 @@
-function EncontrarRopa(Armario, Prenda) {
-    for (let i = 0; i <= Armario.length; i++) {
-        if (Prenda == Armario[i]) {
-            alert(`Tu prenda es ${Armario[i]} esta en la posición ${i}`);
+function Comparar(Num1, Num2) {
 
-        }
+    if (Num1 > Num2) {
+        alert(`El primer numero ${Num1} es mayor que el segundo ${Num2}`)
     }
-
+    if (Num1 == Num2) {
+        alert(`El primer numero ${Num1} y que el segundo ${Num2} són iguales`)
+    }
+    else {
+        alert(`El primer numero ${Num1} es menor que el segundo ${Num2}`)
+    }
 }
-let Armario = []
-const lista = prompt(`Introduce las prendas de tu armario separado por comas:`);
-Armario = lista.split(", ");
-const Prenda = prompt(`Introduce la prenda que quieres encontrar:`);
-EncontrarRopa(Armario, Prenda);
+
+const Num1 = prompt(`Introduce el primer número a comparar:`);
+let Num2;
+if (!isNaN(Num1)) {
+    Num2 = prompt(`Introduce el segundo número a comparar:`);
+}
+else {
+    alert(`Introduce un número valido.`);
+}
+
+Comparar(Num1, Num2);
+

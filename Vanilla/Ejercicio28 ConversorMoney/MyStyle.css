@@ -1,0 +1,12 @@
+body {
+    background: url("https://img.besthqwallpapers.com/Uploads/16-5-2020/132654/money-background-finance-money-texture-american-dollars-euro.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+#CardConversor {
+    margin-top: 15%;
+}
