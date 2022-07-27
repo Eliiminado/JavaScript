@@ -11,4 +11,16 @@
 }
 
 #BodyFormulario {
-    background: #494145 url("https://c.tenor.com/-HkbP1KuqbMAAAAd/pixel-art-kitchen.gif")no-repeat fixed 50% 50%;
+    background: url("https://img.freepik.com/foto-gratis/pastas-crudas-tallarines-cerca-sus-ingredientes-salsa-tomate-sobre-fondo-madera-texturizado_23-2148195011.jpg?w=2000")no-repeat fixed 50% 50%;
+}
+
+#CardForm {
+    background: url("https://i.pinimg.com/originals/2c/ea/d4/2cead4a104fe1861928351a62c0fddad.jpg")no-repeat fixed 50% 50%;
+
+}
+
+#CardBodyForm {
+    margin-left: 100px;
+    margin-right: 50px;
+
+}
