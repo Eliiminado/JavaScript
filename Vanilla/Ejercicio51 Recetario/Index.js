@@ -82,11 +82,12 @@ async function VerRecetas() {
         console.log(error)
     }
 }
+let targetIDParseado;
 async function ModificaReceta(trigger) {
     const TriggerID = trigger.target.id;
     const TargetIDSinPrefijo = TriggerID.replace("Modificar-", "")
     console.log(TargetIDSinPrefijo)
-    const targetIDParseado = parseInt(TargetIDSinPrefijo);
+    targetIDParseado = parseInt(TargetIDSinPrefijo);
     $('#ModalCambios').modal()
     document.querySelector("#ModalBodyCambios").innerHTML = `
         <div>
@@ -162,7 +163,7 @@ async function EnviarModificacion() {
     const RecetaFormatString = JSON.stringify(BodyReceta);
 
     try {
-        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/:id", {
+        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/targetIDParseado", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
