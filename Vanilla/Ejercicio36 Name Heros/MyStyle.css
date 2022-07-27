@@ -1,0 +1,28 @@
+#TextName {
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    color: #FFFFFF;
+
+}
+
+body {
+    background: url(https://images.alphacoders.com/156/thumb-1920-156261.jpg);
+}
+
+.card {
+    margin-top: 55%;
+    margin-right: 15%;
+    background: url(https://s3.us-west-1.amazonaws.com/esdelatino.com/wp-content/uploads/2020/12/12035057/Fragmentos-de-energia-no-ondas-ni-particulas-pueden-ser-los.gif);
+}
+
+.card-title {
+    color: #FFFFFF;
+}
+
+.btn {
+    width: 35%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}

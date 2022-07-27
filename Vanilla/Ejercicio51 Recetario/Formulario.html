@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario Recetario</title>
+    <meta name="description" content="...">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="MyStyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/26258a9741.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="BodyFormulario">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Recetario</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Formulario.html">Nueva receta<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-1" id="EmptySpace">
+
+        </div>
+
+        <div class="col-9" id="Card">
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">Crea una nueva receta:</h2>
+
+                    <div>
+                        <div id="FormName" class="input-group mb-3">
+                            <input id="Titulo" type="text" class="form-control"
+                                placeholder="Introduce el nombre del plato" aria-label="Recipient's username"
+                                aria-describedby="basic-addon2">
+
+                        </div>
+
+                        <form>
+                            <div class="form-group" id="FormIngredientes">
+                                <label for="Ingredientes">Introduce los ingredientes de la receta:</label>
+                                <textarea class="form-control" id="Ingredientes" rows="5"></textarea>
+                            </div>
+                        </form>
+
+                        <div>
+                            <h5>Introduce el tiempo de cocinado en Horas, mínimo un minuto y máximo 24h:</h5>
+                            <input type=" number" id="Tiempo" min="0.01" max="24.00">
+                        </div>
+                        <div id="FormImg" class="input-group mb-3">
+                            <input id="Imagen" type="text" class="form-control"
+                                placeholder="Introduce la imagen de la receta:" aria-label="Recipient's username"
+                                aria-describedby="basic-addon2">
+
+                        </div>
+
+                        <form>
+                            <div class="form-group" id="FormPasos">
+                                <label for="Pasos">Introduce los pasos de la receta:</label>
+                                <textarea class="form-control" id="Pasos" rows="5"></textarea>
+                            </div>
+                        </form>
+
+
+                        <div id="FormValoracion">
+                            <p>Valora con corazones:</p>
+                              <input type="radio" id="1heart" name="fav_value" value="Valoración:💙">
+                              <label for="html">💙</label><br>
+                              <input type="radio" id="2heart" name="fav_value" value="Valoración:💚💚">
+                              <label for="css">💚💚</label><br>
+                              <input type="radio" id="3heart" name="fav_value" value="Valoración:💛💛💛">
+                              <label for="css">💛💛💛</label><br>
+                              <input type="radio" id="4heart" name="fav_value" value="Valoración:🧡🧡🧡🧡">
+                              <label for="css">🧡🧡🧡🧡</label><br>
+                              <input type="radio" id="5heart" name="fav_value" value="Valoración:❤️❤️❤️❤️❤️">
+                              <label for="css">❤️❤️❤️❤️❤️</label><br>
+                        </div>
+
+                        <a href="#" id="Guardar" class="btn btn-lg btn-info"><span
+                                class="glyphicon glyphicon-fast-backward"></span>Guarda</a>
+
+                    </div>
+                </div>
+                <div class="col-1" id="EmptySpace2">
+
+                </div>
+            </div>
+            <script src="Index.js"></script>
+</body>
+
+</html>

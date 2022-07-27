@@ -1,0 +1,14 @@
+#ColapseMenu {
+    width: 100vw;
+}
+
+#Contenido {
+    white-space: wrap;
+}
+
+#BodyRecetario {
+    background: #291713 url("https://i.pinimg.com/originals/4f/f0/88/4ff088795aff41e835671f1479fa0366.gif")no-repeat fixed 50% 50%;
+}
+
+#BodyFormulario {
+    background: #494145 url("https://c.tenor.com/-HkbP1KuqbMAAAAd/pixel-art-kitchen.gif")no-repeat fixed 50% 50%;

@@ -1,0 +1,25 @@
+#ResponsImg {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin-left: 100px;
+    margin-top: 55px;
+    margin-bottom: 50px;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+}
+
+#Enviar {
+    margin-left: 45%;
+}

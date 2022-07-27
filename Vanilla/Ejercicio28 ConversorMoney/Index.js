@@ -17,7 +17,7 @@ function Calcular(trigger) {
 
     if (!isNaN(Dinero)) {
         const DineroParse = parseInt(Dinero);
-        console.log(trigger.target.id)
+
         switch (trigger.target.id) {
 
             case "aDolar":

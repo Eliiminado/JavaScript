@@ -1,0 +1,25 @@
+body {
+    background-color: #418FC1;
+}
+
+.card {
+    background-color: rgba(103, 166, 208, 0.565);
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    margin-top: 85%;
+    width: 300px;
+    margin-right: 250px;
+
+}
+
+.card-title {
+    color: #CCFFFF;
+}
+
+#EmptySpace {
+    background: url(https://i.pinimg.com/originals/8d/e7/95/8de79572caeb64b50ebed822dee317c6.gif)no-repeat center center;
+
+
+    height: 100vh;
+
+}

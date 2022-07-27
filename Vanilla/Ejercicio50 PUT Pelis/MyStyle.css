@@ -1,0 +1,16 @@
+body {
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/9bc27292880429.5e569ff84e4d0.gif")no-repeat fixed 50% 50%;
+}
+
+.card {
+    opacity: 0.75;
+    background-color: black;
+}
+
+#TitleRanking {
+    color: #ffffff;
+    text-shadow: #FFF 0px 0px 5px, rgb(206, 193, 41) 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+
+    text-align: center;
+
+}
