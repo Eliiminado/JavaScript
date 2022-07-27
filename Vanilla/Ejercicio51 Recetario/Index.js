@@ -133,7 +133,7 @@ async function ModificaReceta(trigger) {
     </div>`
 
     document.querySelector(`input[value="${ResponseRecetarioParse[targetIDParseado - 1].valoracion}"]`).checked = true;
-    document.querySelector("#GuardarModificacion").addEventListener("click", EnviarModificacion());
+    document.querySelector("#GuardarModificacion").addEventListener("click", EnviarModificacion);
     // 1. Identificar el botón que trigueó esta función
     // 2. Obtener el ID de la receta
     // 3. Abrir el modal
