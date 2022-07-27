@@ -162,7 +162,7 @@ async function EnviarModificacion() {
     const RecetaFormatString = JSON.stringify(BodyReceta);
 
     try {
-        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas", {
+        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/:id", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
