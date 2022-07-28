@@ -19,6 +19,7 @@ async function GuardaReceta() {
     console.log(RecetaFormatString);
 
     try {
+        document.querySelector("#Mensaje").innerHTML = `<img src="https://thumbs.gfycat.com/ConventionalOblongFairybluebird-max-1mb.gif" alt="Loading" class="rounded mx-auto d-block">`
         await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas", {
             method: "POST",
             headers: {
@@ -26,8 +27,12 @@ async function GuardaReceta() {
             },
             body: RecetaFormatString,
         })
+        document.querySelector("#Mensaje").innerHTML = "";
+        document.querySelector("#Mensaje").innerHTML = `<div class="alert alert-success" role="alert">La receta ha sido guardada!</div>`
     } catch (error) {
         console.log(error)
+        document.querySelector("#Mensaje").innerHTML = `<div class="alert alert-danger" role="alert">La receta no se ha guardado correcamente!</div>`
+
     }
 
 
@@ -36,15 +41,17 @@ let ResponseRecetarioParse;
 
 async function VerRecetas() {
     try {
+        document.querySelector("#Spinner").innerHTML = `<img src="https://thumbs.gfycat.com/ConventionalOblongFairybluebird-max-1mb.gif" alt="Loading" class="rounded mx-auto d-block">`
         const ResponseRecetario = await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas")
         const ResponseRecetarioTxt = await ResponseRecetario.text();
         ResponseRecetarioParse = JSON.parse(ResponseRecetarioTxt);
         for (let i = 0; i < ResponseRecetarioParse.length; i++) {
+            document.querySelector("#Spinner").innerHTML = ""
             document.querySelector("#Tabla").innerHTML +=
                 `<table class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    
                     <th scope="col">Plato</th>
                     <th scope="col">Tiempo</th>
                     <th scope="col">Valoración</th>
@@ -53,7 +60,7 @@ async function VerRecetas() {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
+                       
                         <td> 
                             <p>
                                 "${ResponseRecetarioParse[i].titulo}"
@@ -65,18 +72,21 @@ async function VerRecetas() {
                         <td>"${ResponseRecetarioParse[i].valoracion}"</td>
                         <td>
                             <button data-target="#ModalCambios" id="Modificar-${ResponseRecetarioParse[i].id}" type="button" class="btn btn-primary">Modificar</button>
-                            <button id="Eliminar" type="button" class="btn btn-danger">Eliminar</button>
+                            <button data-target ="#ModalEliminar" id="Eliminar-${ResponseRecetarioParse[i].id}" type="button" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
                 
                 </tbody>
           </table>`
             console.log(`Creando el boton Modificar-${ResponseRecetarioParse[i].id}`)
+            console.log(`Creando el boton Eliminar-${ResponseRecetarioParse[i].id}`)
         }
         console.log("Hemos credo ya todos los botones!")
         for (let i = 0; i < ResponseRecetarioParse.length; i++) {
             document.querySelector(`#Modificar-${ResponseRecetarioParse[i].id}`).addEventListener("click", ModificaReceta);
             console.log(`Activando el boton Modificar-${ResponseRecetarioParse[i].id}`)
+            document.querySelector(`#Eliminar-${ResponseRecetarioParse[i].id}`).addEventListener("click", BorrarReceta);
+            console.log(`Activando el boton Eliminar-${ResponseRecetarioParse[i].id}`)
         }
     } catch (error) {
         console.log(error)
@@ -143,6 +153,7 @@ async function ModificaReceta(trigger) {
 }
 
 async function EnviarModificacion() {
+
     // 1. Coger los datos modificados
     // 2. Hacer la llamada PUT
     const titulo = document.querySelector("#Titulo").value;
@@ -163,19 +174,48 @@ async function EnviarModificacion() {
     const RecetaFormatString = JSON.stringify(BodyReceta);
 
     try {
-        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/targetIDParseado", {
+        document.querySelector("#MensajeModal").innerHTML = `<img src="https://thumbs.gfycat.com/ConventionalOblongFairybluebird-max-1mb.gif" alt="Loading" class="rounded mx-auto d-block">`
+        await fetch(`https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/${targetIDParseado}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: RecetaFormatString,
         })
+        document.querySelector("#MensajeModal").innerHTML = ""
+        document.querySelector("#MensajeModal").innerHTML = `<div class="alert alert-success" role="alert">La receta ha sido modificada y guardada!</div>`
         console.log(`se ha actualizado la receta ${RecetaFormatString}`)
+        document.querySelector("#Tabla").innerHTML = "";
         VerRecetas();
     } catch (error) {
         console.log(error)
+        document.querySelector("#MensajeModal").innerHTML = `<div class="alert alert-danger" role="alert">La receta NO se ha guardado!</div>`
     }
 
+}
+async function BorrarReceta(trigger) {
+    const TriggerID = trigger.target.id;
+    const TargetIDSinPrefijo = TriggerID.replace("Eliminar-", "")
+    targetIDParseado = parseInt(TargetIDSinPrefijo);
+    $('#ModalEliminar').modal()
+    document.querySelector("#BtnBorrar").addEventListener("click", EliminarRecetaAPI);
+
+}
+async function EliminarRecetaAPI() {
+    try {
+        document.querySelector("#MensajeModalEliminar").innerHTML = `<img src="https://thumbs.gfycat.com/ConventionalOblongFairybluebird-max-1mb.gif" alt="Loading" class="rounded mx-auto d-block">`
+        await fetch(`https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas/${targetIDParseado}`, {
+            method: "DELETE",
+
+        })
+        document.querySelector("#MensajeModalEliminar").innerHTML = "";
+        document.querySelector("#MensajeModalEliminar").innerHTML = `<div class="alert alert-success" role="alert">La receta ha sido eliminada</div>`
+        document.querySelector("#Tabla").innerHTML = "";
+        VerRecetas();
+    } catch (error) {
+        console.log(error)
+        document.querySelector("#MensajeModalEliminar").innerHTML = `<div class="alert alert-danger" role="alert">ERROR! La receta NO se ha ido eliminada!</div>`
+    }
 }
 
 VerRecetas();
@@ -183,35 +223,3 @@ const urlAsociada = window.location.pathname;
 if (urlAsociada.includes("Formulario.html")) {
     document.querySelector("#Guardar").addEventListener("click", GuardaReceta);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* try {
-        await fetch("https://62d4fcf2cd960e45d45ea776.mockapi.io/recetas", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-        }
-
-    } catch (error) {
-        console.log(error)
-    }
-    */

@@ -1,3 +1,8 @@
+#Navbar {
+
+    background-image: url("https://t4.ftcdn.net/jpg/03/33/30/51/360_F_333305137_Z2DTGzu55gTGsT3SuyZuvqIRmdliwHZL.jpg");
+}
+
 #ColapseMenu {
     width: 100vw;
 }
@@ -7,11 +12,11 @@
 }
 
 #BodyRecetario {
-    background: #291713 url("https://i.pinimg.com/originals/4f/f0/88/4ff088795aff41e835671f1479fa0366.gif")no-repeat fixed 50% 50%;
+    background: #291713 url("https://img.freepik.com/vector-gratis/fondo-comida-rapida-dibujado-mano_52683-21980.jpg?w=2000")no-repeat fixed 50% 50%;
 }
 
 #BodyFormulario {
-    background: url("https://img.freepik.com/foto-gratis/pastas-crudas-tallarines-cerca-sus-ingredientes-salsa-tomate-sobre-fondo-madera-texturizado_23-2148195011.jpg?w=2000")no-repeat fixed 50% 50%;
+    background: url("https://img.freepik.com/vector-gratis/fondo-comida-rapida-dibujado-mano_52683-21980.jpg?w=2000")no-repeat fixed 50% 50%;
 }
 
 #CardForm {
